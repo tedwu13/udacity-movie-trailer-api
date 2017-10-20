@@ -8,9 +8,18 @@ import requests
 API_KEY = "0a10838a61551f7017f8992348bfa812"
 IMDB_POPULAR_MOVIES_URL = "https://api.themoviedb.org/3/movie/popular?api_key=" + API_KEY
 
-
-# This function gets a movie url which is a third party api and get the json data for all popular movies
 def get_imdb_api(url):
+    """Fetches movie data from imdb (third party api).
+
+    Retrieves popular movies data from IMDB and uses json python module to convert into JSON format
+
+    Args:
+        url: the url that is the third party url
+
+    Returns:
+        A dict with multiple keys of all the metadata from the json. Here, we care about results field because that is where all the data is stored
+        that is why there is a getter method for the dictionary
+    """
     payload = "{}"
     response = requests.get(IMDB_POPULAR_MOVIES_URL, data=payload)
     return json.loads(response.text).get("results")
@@ -18,6 +27,16 @@ def get_imdb_api(url):
 # This function calls another trailer api based on the movie id and the response contains an unique youtube key
 # This youtube key can be appended to the youtube url to get the actual link of the video
 def get_movie_trailer(movie_id):
+    """Fetches movie trailers keys from movie id
+
+    Retrieves all the videos associated with the movie id
+
+    Args:
+        movie_id: the id that is associated with each movie
+
+    Returns:
+        A youtube link with the query/key that is associated with the movie
+    """
     trailer_url = "https://api.themoviedb.org/3/movie/" + str(movie_id) + "/videos?api_key=" + API_KEY
     trailer_data = get_imdb_api(trailer_url)
     video_key = trailer_data[0].get("key")
@@ -27,9 +46,10 @@ def get_movie_trailer(movie_id):
 json_data = get_imdb_api(IMDB_POPULAR_MOVIES_URL)
 movies = []
 
-# The process is this, first get all the popular movies and then populate the values like title, description, vote averages, release data..etc
-# Tricky part is to get the youtube link and calls get_movie_trailer to get the exact movie trailer link
-# The idea is to have a movies list and loop through all the results and create a Movie instance and store it into the list
+# First we get all the popular movies and then populate the values like title, description, vote averages, release data..etc
+# We construct he youtube link and invokes get_movie_trailer method to get the exact movie trailer link
+# Also we create multiple Movie instances dynamically and store it into the movie list
+
 for result in json_data:
     id = result.get("id")
     youtube_link = get_movie_trailer(id)
