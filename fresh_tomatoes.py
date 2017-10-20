@@ -9,7 +9,7 @@ main_page_head = '''
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Fresh Tomatoes!</title>
+    <title>Ted Wu Movie Trailers Page</title>
     <!-- Bootstrap 3 -->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
@@ -123,10 +123,10 @@ movie_tile_content = '''
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
     <img src="{poster_image_url}" width="220" height="342">
     <h3>{movie_title}</h3>
-    <h6>Released on: {release_date}</h4>
-    <h6>Vote Average: {vote_average}</h4>
+    <h5>Story Line: {description}</h5>
+    <h6>Released on: {release_date}</h6>
+    <h6>Vote Average: {vote_average}</h6>
     <h6>Popularity: {popularity}</h6>
-    <h5>{description}</h5>
 </div>
 '''
 
