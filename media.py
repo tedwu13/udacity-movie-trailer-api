@@ -1,8 +1,14 @@
 import webbrowser
-class Movie():
-    "This is a Movie Class that has title storyline, poster image, and trailers"
 
-    def __init__(self, title, description, poster_image_url, trailer_youtube_url, vote_average, release_date, popularity):
+
+class Movie:
+    """
+    Movie Class with constructor and class methods
+    """
+
+    def __init__(self, title, description, poster_image_url,
+                 trailer_youtube_url, vote_average,
+                 release_date, popularity):
         self.title = title
         self.description = description
         self.poster_image_url = poster_image_url
