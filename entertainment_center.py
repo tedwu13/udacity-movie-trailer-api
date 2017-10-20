@@ -21,7 +21,7 @@ def get_imdb_api(url):
         that is why there is a getter method for the dictionary
     """
     payload = "{}"
-    response = requests.get(IMDB_POPULAR_MOVIES_URL, data=payload)
+    response = requests.get(url, data=payload)
     return json.loads(response.text).get("results")
 
 # This function calls another trailer api based on the movie id and the response contains an unique youtube key
@@ -40,6 +40,7 @@ def get_movie_trailer(movie_id):
     trailer_url = "https://api.themoviedb.org/3/movie/" + str(movie_id) + "/videos?api_key=" + API_KEY
     trailer_data = get_imdb_api(trailer_url)
     video_key = trailer_data[0].get("key")
+    print video_key
     return "https://www.youtube.com/watch?v=" + str(video_key)
 
 
