@@ -24,7 +24,7 @@ def get_movie_trailer(movie_id):
     return "https://www.youtube.com/watch?v=" + str(video_key)
 
 
-json_data = get_imdb_api(url)
+json_data = get_imdb_api(IMDB_POPULAR_MOVIES_URL)
 movies = []
 
 # The process is this, first get all the popular movies and then populate the values like title, description, vote averages, release data..etc

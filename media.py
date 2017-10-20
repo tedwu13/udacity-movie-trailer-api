@@ -1,7 +1,6 @@
 import webbrowser
 class Movie():
     "This is a Movie Class that has title storyline, poster image, and trailers"
-    print __doc__
     VALID_RATINGS = ["G", "PG", "PG-13", "R"]
     def __init__(self, title, description, poster_image_url, trailer_youtube_url, vote_average, release_date, popularity):
         self.title = title
