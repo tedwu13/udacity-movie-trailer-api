@@ -14,3 +14,10 @@ Install requirements
 Run the command to open the web page
 ```python entertainment_center.py ```
 
+Movie Page
+![Alt text](/screenshots/movie.png?raw=true "Optional Title")
+
+
+Trailer Preview Page
+
+![Alt text](/screenshots/trailer.png?raw=true "Optional Title")
