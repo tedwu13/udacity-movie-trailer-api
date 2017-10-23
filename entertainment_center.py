@@ -1,3 +1,15 @@
+##########################################
+# Project 3: Movie Website
+# Date Started: 10/31/2017
+# Date Completed: 10/31/2017
+# Submitted by: Ted Wu
+##########################################
+
+######################################## Media File ####################################################
+# Description: This file creates the class Movie to allow for instances of this class to be used in the
+#              entertainment.py file. This definition of the class Movie was obtained through the course
+########################################################################################################
+
 import media
 import fresh_tomatoes
 import json
