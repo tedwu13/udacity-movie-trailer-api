@@ -2,6 +2,9 @@ import media
 import fresh_tomatoes
 import json
 import requests
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 # Shouldn't store API Keys like this.
 # Should have an environment file to store these
